@@ -1,0 +1,134 @@
+#products {
+
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background-color: $light-gray;
+
+    h2 {
+
+        font-size: 3.3rem;
+        text-transform: uppercase;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+
+    .products-wrapper {
+
+        width: 100%;
+        height: 20em;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+
+        .product-card {
+
+            width: 25%;
+            padding: 10px;
+            @include flexCenter(space-around);
+            flex-direction: column;
+
+            .product-img {
+
+                height: 9.4em;
+                width: 16em;
+
+                img {
+
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+
+            .product-desc {
+
+                text-align: center;
+                width: 62%;
+
+                h3 {
+
+                    text-transform: capitalize;
+                    font-family: 'Glacial Indifference-bold';
+                    font-size: 1.1rem;
+                    width: 100%;
+                    margin-bottom: .5rem;
+                }
+
+                p {
+
+                    width: 100%;
+                }
+
+            }
+
+            .home-accents {
+
+                width: 70%;
+            }
+            
+        }
+    }
+}
+
+
+@include mQ(768px) {
+
+    #products {
+
+        h2 {
+
+            font-size: 3rem;
+        }
+
+        .products-wrapper {
+
+            height: max-content;
+            flex-flow: row wrap;
+
+
+            .product-card {
+
+                width: 15em;
+                margin-bottom: 20px;
+
+                .product-img {
+
+                    width: 100%;
+                }
+
+                .product-desc {
+
+                    width: 100%;
+
+                    p {
+
+                        width: 90%;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mQ(425px) {
+
+    #products {
+
+        padding: 1rem;
+        padding-top: 3rem;
+
+        h2 {
+
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
+    }
+}

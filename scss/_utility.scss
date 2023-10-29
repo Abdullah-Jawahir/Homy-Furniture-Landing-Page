@@ -1,0 +1,80 @@
+// Primary
+$primary-color: #997C68;
+$light-primary-color:rgb(187, 139, 108);
+// Nuetral
+$secondary-color: #b49377;
+$teritory-color: #a85c3d;
+$light-gray: #FAF8FA;
+$contact-info-bg: #121212;
+$heart-red: rgb(204, 8, 67);
+$light-black: rgba(37, 37, 37, 0.322);
+
+// Text color
+$text-color: rgba(0, 0, 0, 0.6);
+$head-color: rgba(0, 0, 0, 0.8);
+// Reviews color
+$light-grayis-magenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    font-style: normal;
+    font-display: swap;
+    src: url(../Fonts/GlacialIndifference-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Glacial Indifference-bold';
+    font-style: normal;
+    font-weight: bolder;
+    font-display: swap;
+    src: url(../Fonts/GlacialIndifference-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-weight: normal;
+    font-display: swap;
+    src: url(../Fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Ubuntu-bolder';
+    font-weight: bolder;
+    font-display: swap;
+    src: url(../Fonts/Ubuntu-Bold.ttf);
+}
+
+
+
+
+@mixin flexCenter($align) {
+    display: flex;
+    justify-content: $align;
+    align-items: center;
+}
+
+@mixin animatedSpan{
+    animation: animateSpan .9s;
+
+    @keyframes animateSpan{
+        0% {
+
+            opacity: 0;
+            font-size: 0.1rem;
+        }
+
+        100% {
+
+            opacity: 1;
+            font-size: 1rem;
+        }
+    }
+}
+
+@mixin mQ($width) {
+    @media screen and (max-width: $width){
+        @content;
+    }
+}

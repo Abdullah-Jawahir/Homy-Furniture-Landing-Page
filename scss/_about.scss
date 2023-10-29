@@ -1,0 +1,191 @@
+#about {
+
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+
+    .potrait-img {
+        
+        width: 620px;
+        height: 100vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .about-wrapper {
+
+        @include flexCenter(space-between);
+        flex-direction: column;
+        width: min-content;
+
+        .about-texts{
+        
+            width: 100%;
+            border: 10px solid;
+            border-top: none;
+            height: 35%;
+            padding: 40px 40px 20px 40px;
+
+            h2 {
+
+                font-size: 3.3rem;
+                text-transform: uppercase;
+                font-family: 'glacial indifference-bold';
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                margin-bottom: 20px;
+            }
+
+            p {
+
+                width: 100%;
+                font-size: 1.2rem;
+                color: $text-color;
+
+            }
+            
+        }
+    
+        .landscape-img{
+            
+            width: 550px;
+            height: 300px;
+            
+    
+            #video{
+    
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+}
+
+@include mQ(1024px) {
+
+    #about {
+
+        align-items: self-start;
+
+        .potrait-img {
+
+            // width: 40%;
+            flex: .4;
+            height: 100%;
+        }
+
+        .about-wrapper {
+
+            flex: .5;
+
+            .about-texts {
+
+                margin-bottom: 40px;
+            }
+
+            .landscape-img {
+
+                height: 324px;
+            }
+        }
+    }
+}
+
+@include mQ(768px) {
+
+    #about {
+
+        .potrait-img {
+        
+            width: 40%;
+        }
+    
+        .about-wrapper {
+
+            width: 50%;
+    
+            .about-texts{
+            
+                height: 13em;
+                padding: 15px 20px 10px 20px;
+                margin-bottom: 10px;
+    
+                h2 {
+    
+                    font-size: 2.3rem;
+                    margin-bottom: 10px;
+                }
+
+                p {
+
+                    text-align: justify;
+                    width: 90%;
+                }
+                
+            }
+        
+            .landscape-img{
+                width: 100%;
+                height: 270px;
+            }
+        }
+    }
+}
+
+@include mQ(425px) {
+
+    #about {
+
+        flex-direction: column-reverse;
+        padding-top: 3rem;
+
+        .potrait-img {
+
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .about-wrapper {
+
+            width: 100%;
+
+            .about-texts {
+
+                border: none;
+                padding: 10px;
+
+                h2 {
+    
+                    font-size: 2.8rem;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    padding-left: 0;
+                }
+
+                p {
+
+                    text-align: left;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .landscape-img {
+
+                margin-bottom: 3rem;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+

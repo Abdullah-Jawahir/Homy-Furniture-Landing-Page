@@ -1,0 +1,410 @@
+#reviews {
+
+    width: 100%;
+    height: auto;
+    padding: 5.8rem;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-areas:
+    "desc stars"
+    "quotes quotes"
+    ;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100%;
+        height: 100%;
+        background-image: url(../Images/bg-pattern-top-desktop.svg);
+        background-repeat: no-repeat;
+        z-index: -999;
+    }
+
+    &::after {
+
+        content: '';
+        position: absolute;
+        bottom: -75px;
+        right: -300px;
+        width: 100%;
+        height: 100%;
+        background-image: url(../Images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        z-index: -999;
+    }
+
+
+    .review-desc {
+
+        grid-area: desc;
+        width: fit-content;
+        text-align: left;
+
+
+        h2 {
+
+            font-size: 2.4rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            width: 7em;
+            margin-bottom: .5rem;
+            line-height: 1;
+            color: $secondary-color;
+            
+        }
+
+        p {
+
+            width: 25em;
+            color: $text-color;
+        }
+    }
+
+    .review-stars {
+
+        grid-area: stars;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+
+        .review-star-card {
+
+            display: flex;
+            border-radius: 5px;
+            padding: 13px;
+            width: 25em;
+            position: absolute;
+            background-color: $light-grayis-magenta;
+
+            .stars {
+
+                margin-right: 1.5rem;
+            }
+
+            p {
+
+                color: $teritory-color;
+            }
+        }
+
+        .card-zero {
+
+            right: 80px;
+            top: 0%;
+            padding-right: 3rem;
+        }
+        .card-one {
+
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .card-two {
+
+            right: 0;
+            bottom: 0;
+            padding-right: 3.5rem;
+        }
+
+    }
+
+    .review-quotes {
+
+        grid-area: quotes;
+        width: 100%;
+        height: 210px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-top: 1.8rem;
+        position: relative;
+
+
+        .review-card {
+
+            border-radius: 5px;
+            padding: 1.2rem;
+            padding-bottom: 2rem;
+            position: absolute;
+            background-color: $secondary-color;
+
+            .client-details {
+
+                display: flex;
+                align-items: center;
+
+                .client-img {
+
+                    width: 40px;
+                    height: 40px;
+                    margin: 20px;
+                    margin-left: 0;
+
+                    img {
+
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+
+                .name-verification {
+
+                    display: flex;
+                    flex-direction: column;
+                    text-transform: capitalize;
+                    
+
+                    .client-name {
+
+                        font-weight: bold;
+                        color: $light-grayis-magenta;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        letter-spacing: .06rem;
+                    }
+
+                    .client-verification {
+
+                        color: $teritory-color;
+                    }
+                }
+            }
+
+
+            .client-quotes {
+
+                width: 18em;
+                color: $text-color;
+            }
+        }
+
+        .review-card-zero {
+
+            top: 0;
+            left: 0;
+        }
+
+        .review-card-one {
+
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .review-card-two {
+
+            top: 40px;
+            right: 0;
+        }
+    }
+
+}
+
+
+@include mQ(768px) {
+
+    #reviews {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        grid-template-areas: unset;
+        padding: 3rem;
+
+
+        &::before {
+
+            top: 0;
+            left: 0px;
+        }
+
+        &::after {
+
+            bottom: -420px;
+            right: 0px;
+        }
+
+        .review-desc {
+
+            grid-area: unset;
+            margin-bottom: 2rem;
+            width: min-content;
+            
+
+            h2 {
+
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .review-stars {
+
+            grid-area: unset;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            .review-star-card {
+    
+                width: 25em;
+                background-color: $light-grayis-magenta;
+                position: unset;
+                margin-bottom: 1rem;
+                height: 3.5em;
+                align-items: center;
+            }
+    
+            .card-zero {
+    
+                right:unset;
+                top: unset;
+            }
+            .card-one {
+    
+                right: unset;
+                top: unset;
+                transform: unset;
+            }
+            .card-two {
+    
+                right: unset;
+                bottom: unset;
+            }
+    
+        }
+
+
+        .review-quotes {
+
+            grid-area: unset;
+            height: auto;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+
+
+            .review-card {
+
+                position: unset;
+                width: 20em;
+                margin: auto;
+                margin-bottom: 1rem;
+
+                .client-quotes {
+
+                    width: 95%;
+                    text-align: justify;
+                }
+            }
+
+            .review-card-zero {
+
+                top: unset;
+                left: unset;
+            }
+    
+            .review-card-one {
+    
+                top: unset;
+                left: unset;
+                transform: unset;
+            }
+    
+            .review-card-two {
+    
+                top: unset;
+                right: unset;
+            }
+        }
+    }
+}
+
+@include mQ(425px) {
+
+    #reviews {
+
+        padding: 3rem 10px;
+
+        &::before {
+
+            background-image: url(../Images/bg-pattern-top-mobile.svg);
+            top: 0;
+            left: 0px;
+        }
+
+        &::after {
+
+            background-image: url(../Images/bg-pattern-bottom-mobile.svg);
+            bottom: -960px;
+            right: 0px;
+        }
+
+        .review-desc {
+
+            margin-bottom: 2rem;
+            width: 85%;
+            text-align: center;
+            
+
+            p {
+
+                width: 100%;
+            }
+        }
+
+        .review-stars {
+            padding: 0 10px;
+            width: 100%;
+            margin: auto;
+
+            .review-star-card {
+
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 1rem;
+
+                .stars {
+
+                    margin: auto;
+                    margin-bottom: .3rem;
+                }
+
+                p {
+
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+
+            .card-zero, .card-two {
+
+                padding-right: 0;
+            }
+        }
+
+        .review-quotes {
+
+            .review-card {
+
+                .client-quotes {
+
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
